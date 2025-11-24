@@ -50,10 +50,10 @@ onMounted(() => {
 <template>
   <main>
     <div>
-      <h1>CineLatin</h1>
+      <img src="../../public/img/cinelatin-logo.svg" alt="">
       <p>A América Latina contada pelo olhar do cinema.</p>
       <p>
-        Explore o cinema latino-americano através de histórias, <br />
+        Explore o cinema latino-americano através de histórias,
         culturas e emoções que conectam o continente.
       </p>
     </div>
@@ -77,18 +77,19 @@ main {
   color: white;
   text-align: center;
 }
-h1 {
-  color: #009fb1;
-  font-family: cursive;
-  font-size: 3rem;
+
+img {
+  height: 8vw;
+  padding-bottom: 2vw;
 }
 p {
-  color: yellow;
-  font-size: 0.9vw;
+  color: rgb(255, 227, 100);
+  font-size: 1.1vw;
 }
 h3 {
-  color: #ff366f;
-  padding: 2.5vw 0 0 0;
+  color: #ff3679;
+  font-size: 1.5vw;
+  padding: 1vw 0 0 0;
 }
 img {
   display: block;
