@@ -17,6 +17,12 @@ const routes = [
     component: () => import('../views/MovieDetailsView.vue'),
     props: true,
   },
+  {
+    path: '/country/:countryId',
+    name: 'MoviesByCountry',
+    component: () => import('../views/MoviesByCountry.vue'),
+    props: true,
+  },
 ]
 
 const router = createRouter({

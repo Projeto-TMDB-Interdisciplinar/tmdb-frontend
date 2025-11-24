@@ -1,48 +1,49 @@
 <script setup>
 import mapa from '@/assets/svg/mapa.svg'
 import { onMounted } from 'vue'
+import { useMovieStore } from '@/stores/movie'
+import { useRouter } from 'vue-router'
+
+const movieStore = useMovieStore()
+const router = useRouter()
 
 onMounted(() => {
   const elImage = document.getElementById('map')
-  elImage.addEventListener('load', function () {
-    console.log(elImage.contentDocument)
+
+  // garante que o SVG esteja carregado
+  elImage.addEventListener('load', () => {
     const svgDoc = elImage.contentDocument
-    if (svgDoc) {
-      // get all paths inside the svg
-      const countries = svgDoc.querySelectorAll('g')
-      console.log(countries)
+    if (!svgDoc) return
 
-      countries.forEach((country) => {
-        
-        // ao passar o mouse por cima do país, desfocar o resto do mapa
+    const countries = svgDoc.querySelectorAll('g')
 
-        country.addEventListener('mouseenter', () => {
-          countries.forEach((otherCountry) => {
-            if (otherCountry !== country) {
-              otherCountry.style.opacity = '0.3'
-              otherCountry.style.filter = 'blur(4px)' // adicionei
-            }
-          })
-        })
-        country.addEventListener('mouseleave', () => {
-          countries.forEach((otherCountry) => {
-            if (otherCountry !== country) {
-              otherCountry.style.opacity = '1'
-              otherCountry.style.filter = 'none' // adicionei
-            }
-          })
-        })
-        // add hover effect
-
-        country.addEventListener('click', () => {
-          const countryId = country.id
-          // navigate to country view
-          window.location.href = `/country/${countryId}`
+    countries.forEach((country) => {
+      // efeito hover
+      country.addEventListener('mouseenter', () => {
+        countries.forEach((otherCountry) => {
+          if (otherCountry !== country) {
+            otherCountry.style.opacity = '0.3'
+            otherCountry.style.filter = 'blur(4px)'
+          }
         })
       })
-    }
+      country.addEventListener('mouseleave', () => {
+        countries.forEach((otherCountry) => {
+          if (otherCountry !== country) {
+            otherCountry.style.opacity = '1'
+            otherCountry.style.filter = 'none'
+          }
+        })
+      })
+
+      // clique no país
+      country.addEventListener('click', () => {
+        const countryId = country.id
+        movieStore.getMoviesByCountry(countryId) // busca os filmes em background
+        router.push(`/country/${countryId}`) // navega imediatamente
+      })
+    })
   })
-  //
 })
 </script>
 
@@ -67,41 +68,31 @@ onMounted(() => {
         height="100%"
       />
     </div>
-
   </main>
 </template>
 
 <style scoped>
 main {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
+  color: white;
+  text-align: center;
 }
-
 h1 {
   color: #009fb1;
   font-family: cursive;
   font-size: 3rem;
 }
-
 p {
   color: yellow;
   font-size: 0.9vw;
 }
-
 h3 {
   color: #ff366f;
   padding: 2.5vw 0 0 0;
 }
-
-h1, p, h3 {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
 img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: 50%;
   padding-top: 20px;
 }

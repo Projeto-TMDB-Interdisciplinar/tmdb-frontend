@@ -1,3 +1,5 @@
+<!--
+
 <script setup>
   import { defineProps, onMounted } from 'vue';
   import { useMovieStore } from '@/stores/movie';
@@ -58,3 +60,5 @@
     margin-bottom: 2rem;
   }
 </style>
+
+-->
