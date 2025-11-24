@@ -27,13 +27,15 @@
 </template>
 
 <style scoped>
+.cabecalho {
+    background-color: black;
+}
     .info {
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        padding-left: 4vw;
-        padding-right: 4vw;
+        padding: 2vw 4vw 2vw 4vw;
     }
    ul {
     display: flex;
