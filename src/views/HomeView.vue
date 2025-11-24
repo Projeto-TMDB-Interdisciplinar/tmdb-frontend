@@ -73,7 +73,7 @@ onMounted(() => {
 
 <style scoped>
 main {
-  background-color: black;
+  /* background-color: black; */
   color: white;
   text-align: center;
 }
