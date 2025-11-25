@@ -3,6 +3,7 @@ import HeaderComponent from './components/HeaderComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
 </script>
 <template>
+  <main>
     <div class="header">
         <HeaderComponent />
     </div>
@@ -12,4 +13,11 @@ import FooterComponent from './components/FooterComponent.vue';
     <div class="footer">
         <FooterComponent /> 
     </div>
+  </main>
 </template>
+
+<style scoped>
+main {
+background-color: black;
+}
+</style>

@@ -13,7 +13,7 @@ const props = defineProps({
 
 // Paginação
 const currentPage = ref(1)
-const itemsPerPage = 10
+const itemsPerPage = 20
 
 // Busca os filmes assim que entra na página
 onMounted(async () => {
@@ -32,8 +32,6 @@ const displayedMovies = computed(() => {
   <main>
     <div class="main">
     <button @click="$router.back()">Voltar</button>
-
-    <h1></h1>
 
     <h2>Filmes do país: {{ props.countryId }}</h2>
 
@@ -64,10 +62,10 @@ const displayedMovies = computed(() => {
   border-radius: 0.5rem;
 }
 main {
-  /* background-color: black; */
+  background-color: black;
   justify-content: center;  
 } 
 h1, h2, h3 {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 </style>
