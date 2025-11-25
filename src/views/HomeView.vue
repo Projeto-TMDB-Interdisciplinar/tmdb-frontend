@@ -73,6 +73,8 @@ onMounted(() => {
 
 <style scoped>
 main {
+  background-color: black;
+  color: white;
   text-align: center;
     background-color: #000; /* Fundo preto principal */
     background-image: 

@@ -15,3 +15,9 @@ import FooterComponent from './components/FooterComponent.vue';
     </div> 
     </main>
 </template>
+
+<style scoped>
+main {
+background-color: black;
+}
+</style>
