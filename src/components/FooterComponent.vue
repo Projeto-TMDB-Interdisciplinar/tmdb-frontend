@@ -62,6 +62,9 @@
         padding-left: 4vw;
         padding-right: 4vw;
     }
+    p {
+        color: #000000;
+    }
     .info {
         display: flex;
         justify-content: space-between;

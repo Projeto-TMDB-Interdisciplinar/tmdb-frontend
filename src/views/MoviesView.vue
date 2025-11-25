@@ -1,5 +1,3 @@
-<!--
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import api from '@/plugins/axios'
@@ -9,7 +7,6 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const genreStore = useGenreStore()
-
 const isLoading = ref(false)
 
 const movies = ref([])
