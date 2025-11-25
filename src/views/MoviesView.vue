@@ -1,3 +1,5 @@
+<!--
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import api from '@/plugins/axios'
@@ -168,3 +170,5 @@ function openMovie(movieId) {
   font-weight: bolder;
 }
 </style>
+
+-->

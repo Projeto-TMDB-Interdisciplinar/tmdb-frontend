@@ -56,10 +56,9 @@
 
 <style scoped>
     .footer {
-        background-color: #3DF2FF;
+        background-color: #34acb4;
         padding: 2vw;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        padding: 1vw;
         padding-left: 4vw;
         padding-right: 4vw;
     }
