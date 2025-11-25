@@ -76,6 +76,16 @@ main {
   background-color: black;
   color: white;
   text-align: center;
+    background-color: #000; /* Fundo preto principal */
+    background-image: 
+        /* Círculo 1: Vermelho */
+        radial-gradient(circle at 10% 45%, #c9288177 0, transparent 45%),
+        /* Círculo 2: Verde */
+        radial-gradient(circle at 80% 45%, #2eaeb375 0, transparent 45%);
+
+    background-repeat: no-repeat; /* Impede a repetição dos gradientes */
+    /* Você pode ajustar o background-size para controlar o tamanho dos círculos */
+    background-size: 80vw 80vw, 100vw 200vw;
 }
 
 img {
