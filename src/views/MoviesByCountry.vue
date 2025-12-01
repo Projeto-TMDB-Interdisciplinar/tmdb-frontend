@@ -4,6 +4,8 @@ import { useMovieStore } from '@/stores/movie'
 import { useGenreStore } from '@/stores/genre'
 import api from '@/plugins/axios'
 import { useRouter } from 'vue-router'
+import { getCountryName } from '@/stores/countries'
+
 
 const router = useRouter()
 const movieStore = useMovieStore()
@@ -24,7 +26,7 @@ const itemsPerPage = 20
 onMounted(async () => {
   isLoading.value = true
   await genreStore.getAllGenres('movie')
-  await movieStore.getMoviesByCountry(props.countryId.id)
+  await movieStore.getMoviesByCountry(props.countryId)
   isLoading.value = false
 })
 
@@ -61,7 +63,7 @@ function openMovie(movieId) {
     <div class="main">
     <button @click="$router.back()"><span class="fa-solid fa-arrow-left"></span></button>
 
-    <h2>Filmes do país: {{ props.countryId }}</h2>
+    <h2>{{ getCountryName(props.countryId) }}</h2>
 
     <div class="movies-container">
       <div class="movie-card" v-for="movie in displayedMovies" :key="movie.id">
@@ -95,7 +97,7 @@ function openMovie(movieId) {
 
 <style scoped>
 main {
-  padding: 0 3vw 3w 3vw;
+  margin: 2vw 2vw 2vw 4vw;
 }
 .movies-container {
   display: grid;
@@ -132,6 +134,12 @@ main {
 } 
 h1, h2, h3, p {
   padding-bottom: 0.5vw;
+}
+main h2 {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2vw;
 }
 .movie-genres {
   display: flex;
