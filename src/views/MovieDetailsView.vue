@@ -18,6 +18,8 @@
 </script>
 
 <template>
+  <main>
+    <button @click="$router.back()"><span class="fa-solid fa-arrow-left"></span></button>
   <div class="main">
     <div class="content">
       <img class="poster"
@@ -55,6 +57,7 @@
       <p v-else>{{ company.name }}</p>
     </template>
   </div>
+  </main>
 </template>
 
 <style scoped>
@@ -167,4 +170,12 @@
       align-items: center;
     }
   }
+  button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  margin: 2vw 0 2vw 2vw;
+  cursor: pointer;
+}
 </style>

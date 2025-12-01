@@ -59,7 +59,7 @@ function openMovie(movieId) {
 <template>
   <main>
     <div class="main">
-    <button @click="$router.back()">Voltar</button>
+    <button @click="$router.back()"><span class="fa-solid fa-arrow-left"></span></button>
 
     <h2>Filmes do país: {{ props.countryId }}</h2>
 
@@ -167,5 +167,13 @@ h1, h2, h3, p {
   background-color: #abc322;
   color: #000;
   font-weight: bolder;
+}
+button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  margin: 2vw 0 2vw 2vw;
+  cursor: pointer;
 }
 </style>
